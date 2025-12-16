@@ -4,7 +4,7 @@ from utils.database import Base
 
 class Todo(Base):
     __tablename__ = "todo"
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     task_name  = Column(String)
     is_completed = Column(Boolean, default=False)
     pass 

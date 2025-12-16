@@ -3,7 +3,7 @@ from utils.database import Base
 
 class User(Base):
     __tablename__="user"
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     name = Column(String)
     email = Column(String, index=True)
     password = Column(String)

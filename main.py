@@ -25,7 +25,7 @@ def create_task(task_name: str, is_completed: bool, db: Session=Depends(get_db))
     return {"task": task}
 
 @app.put("/todos/")
-def update_task(task_id: int, db: Session=Depends(get_db)):
+def update_task(task_id: int, is_completed: bool, db: Session=Depends(get_db)):
     task = db.query(Todo).filter(Todo.id == task_id).first()
     if task:
         task.is_completed = not task.is_completed
